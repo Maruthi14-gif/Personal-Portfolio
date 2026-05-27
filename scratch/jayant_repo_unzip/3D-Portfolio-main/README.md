@@ -2,7 +2,7 @@
 
 Welcome to my immersive 3D portfolio website! This project showcases my skills, projects, and creativity through stunning 3D animations, interactive elements, and smooth motion design. Experience a cosmic journey through space-themed design with cutting-edge web technologies.
 
-![Portfolio Preview](https://github.com/Jayant-1/3D-Portfolio/blob/main/public/assets/nav-link-previews/home.png?raw=true)
+![Portfolio Preview]
 
 
 ## ✨ Features
@@ -221,10 +221,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Portfolio**: [https://jayant-1.vercel.app/]
-- **GitHub**: [@Jayant-1](https://github.com/Jayant-1)
-- **LinkedIn**: [Jayant Potdar](https://www.linkedin.com/in/jayant-potdar-880a461b8/)
-- **Email**: jayantpotdar2006@gmail.com
+- **Portfolio**: 
+- **GitHub**: 
+- **LinkedIn**: 
+- **Email**: 
 
 ---
 
