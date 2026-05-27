@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import emailjs from "@emailjs/browser"
 import { Toaster, toast } from "react-hot-toast"
 import Confetti from "react-confetti"
+import ReCAPTCHA from "react-google-recaptcha"
 
 import { styles } from "../styles"
 import { EarthCanvas } from "./canvas"
@@ -17,6 +18,7 @@ import { github } from "../assets"
 
 const Contact = () => {
   const formRef = useRef()
+  const recaptchaRef = useRef()
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -26,10 +28,15 @@ const Contact = () => {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
+  const [recaptchaToken, setRecaptchaToken] = useState(null)
   const [windowDimension, setWindowDimension] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   })
+
+  const handleRecaptchaChange = (token) => {
+    setRecaptchaToken(token)
+  }
 
   const detectSize = () => {
     setWindowDimension({
@@ -73,6 +80,14 @@ const Contact = () => {
       return
     }
 
+    if (!recaptchaToken) {
+      toast.error("Please verify that you are not a robot! 🤖", {
+        duration: 3000,
+        position: "bottom-right",
+      })
+      return
+    }
+
     setLoading(true)
 
     emailjs
@@ -93,6 +108,10 @@ const Contact = () => {
           setLoading(false)
           setSuccess(true)
           setForm({ name: "", email: "", message: "" })
+          setRecaptchaToken(null)
+          if (recaptchaRef.current) {
+            recaptchaRef.current.reset()
+          }
           toast.success("Message sent successfully!", {
             duration: 3000,
             position: "bottom-right",
@@ -106,6 +125,10 @@ const Contact = () => {
         (error) => {
           setLoading(false)
           console.error(error)
+          setRecaptchaToken(null)
+          if (recaptchaRef.current) {
+            recaptchaRef.current.reset()
+          }
           toast.error("Something went wrong. Please try again.", {
             duration: 3000,
             position: "bottom-right",
@@ -132,13 +155,13 @@ const Contact = () => {
       )}
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-tertiary/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]"
+        className="flex-[0.75] bg-tertiary/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] min-w-0"
       >
         <div className="flex flex-col mb-8">
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact.</h3>
           
-          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 mt-6">
+          <div className="flex flex-col md:flex-row md:flex-wrap gap-4 mt-6">
             <a
               href="mailto:palyammaaru14@gmail.com"
               className="flex items-center gap-3 text-secondary hover:text-white transition-colors duration-300 group"
@@ -174,7 +197,7 @@ const Contact = () => {
         </div>
 
         <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
-          <div className="flex flex-col sm:flex-row gap-8">
+          <div className="flex flex-col sm:flex-row xl:flex-col gap-8">
             <div className="flex-1">
               <label className="flex flex-col">
                 <span className="text-white font-medium mb-4 flex items-center gap-2">
@@ -223,6 +246,17 @@ const Contact = () => {
             />
           </label>
 
+          <div className="flex justify-center sm:justify-start my-2 overflow-hidden w-full">
+            <div className="scale-[0.85] xs:scale-[0.9] sm:scale-100 origin-left">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqySaR7qI15-L011UTEFD31"}
+                onChange={handleRecaptchaChange}
+                theme="dark"
+              />
+            </div>
+          </div>
+
           <button
             type="submit"
             className="relative bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 overflow-hidden group"
@@ -252,7 +286,7 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
+      <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] min-w-0">
         <EarthCanvas />
       </motion.div>
     </div>
