@@ -1,0 +1,10 @@
+node_modules
+.vercel
+.env*.local
+dist
+.DS_Store
+.vscode
+.idea
+scratch/friend_portfolio/
+scratch/jayant_repo/
+scratch/jayant_repo_fast/
