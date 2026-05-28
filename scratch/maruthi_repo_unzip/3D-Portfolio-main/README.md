@@ -84,7 +84,7 @@ Welcome to my immersive 3D portfolio website! This project showcases my skills, 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/Jayant-1/3D-Portfolio.git
+   git clone https://github.com/Maruthi14-gif/3D-Portfolio.git
    cd 3d-portfolio
    ```
 

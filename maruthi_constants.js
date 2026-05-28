@@ -82,8 +82,8 @@ const achievements = [
     date: "May 2024",
     points: ["Responsive Web Design", "JavaScript"],
     credential: [
-      "https://freecodecamp.org/certification/Jayant-1/responsive-web-design",
-      "https://freecodecamp.org/certification/Jayant-1/responsive-web-design",
+      "https://freecodecamp.org/certification/Maruthi14-gif/responsive-web-design",
+      "https://freecodecamp.org/certification/Maruthi14-gif/responsive-web-design",
     ],
   },
   {
@@ -131,7 +131,7 @@ const achievements = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Jayant proved me wrong.",
+      "I thought it was impossible to make a website as beautiful as our product, but Maruthi proved me wrong.",
     name: "Sara Lee",
     designation: "CFO",
     company: "Acme Co",
@@ -139,7 +139,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Jayant does.",
+      "I've never met a web developer who truly cares about their clients' success like Maruthi does.",
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
@@ -147,7 +147,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "Jayant boosted our website traffic by 50% through his smart optimization. We are Truly grateful!",
+      "Maruthi boosted our website traffic by 50% through his smart optimization. We are Truly grateful!",
     name: "Lisa Wang",
     designation: "CTO",
     company: "456 Enterprises",
@@ -188,8 +188,8 @@ const projects = [
     ],
     image: neuralnet,
     images: [neuralnet, neuralnet1, neuralnet2, neuralnet3, neuralnet4], // Multiple screenshot support
-    source_code_link: "https://github.com/Jayant-1/NeuralNet",
-    live_demo_link: "https://neuralnet.jayantpotdar.in/",
+    source_code_link: "https://github.com/Maruthi14-gif/NeuralNet",
+    live_demo_link: "https://neuralnet.maruthi.in/",
     metrics: {
       stars: 152,
       forks: 42,
@@ -240,8 +240,8 @@ const projects = [
       krypton5,
       krypton6,
     ], // Multiple screenshot support
-    source_code_link: "https://github.com/Jayant-1/Krypton",
-    live_demo_link: "https://krypton.jayantpotdar.in/",
+    source_code_link: "https://github.com/Maruthi14-gif/Krypton",
+    live_demo_link: "https://krypton.maruthi.in/",
     metrics: {
       stars: 152,
       forks: 42,
@@ -284,8 +284,8 @@ const projects = [
     ],
     image: astroPixel,
     images: [astroPixel, astroPixel1, astroPixel2, astroPixel3], // Multiple screenshot support
-    source_code_link: "https://github.com/Jayant-1/AstroPixel",
-    live_demo_link: "https://astropixel.jayantpotdar.in/",
+    source_code_link: "https://github.com/Maruthi14-gif/AstroPixel",
+    live_demo_link: "https://astropixel.maruthi.in/",
     metrics: {
       stars: 152,
       forks: 42,
@@ -328,8 +328,8 @@ const projects = [
       malariadetectionsystem1,
       malariadetectionsystem2,
     ], // Multiple screenshot support
-    source_code_link: "https://github.com/Jayant-1/MalariaDetectionSystem",
-    live_demo_link: "https://malariadetectionsystem.jayantpotdar.in/",
+    source_code_link: "https://github.com/Maruthi14-gif/MalariaDetectionSystem",
+    live_demo_link: "https://malariadetectionsystem.maruthi.in/",
     metrics: {
       stars: 89,
       forks: 28,
@@ -372,8 +372,8 @@ const projects = [
     ],
     image: portfolio,
     images: [portfolio, about, skills, contact], // Multiple screenshot support
-    source_code_link: "https://github.com/Jayant-1/3D-Portfolio",
-    live_demo_link: "https://www.jayantpotdar.in/",
+    source_code_link: "https://github.com/Maruthi14-gif/3D-Portfolio",
+    live_demo_link: "https://www.maruthi.in/",
     metrics: {
       stars: 234,
       forks: 67,
@@ -416,8 +416,8 @@ const projects = [
     ],
     image: novalearn,
     images: [novalearn, novalearn1, novalearn2], // Multiple screenshot support
-    source_code_link: "https://github.com/Jayant-1/Nova-Learn",
-    live_demo_link: "https://nova-learn-jayant.vercel.app/",
+    source_code_link: "https://github.com/Maruthi14-gif/Nova-Learn",
+    live_demo_link: "https://nova-learn-maruthi.vercel.app/",
     metrics: {
       stars: 127,
       forks: 35,
