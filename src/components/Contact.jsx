@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState, useCallback, useEffect } from "react"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import emailjs from "@emailjs/browser"
 import { Toaster, toast } from "react-hot-toast"
 import Confetti from "react-confetti"
@@ -141,6 +141,20 @@ const Contact = () => {
     setShowConfetti(false)
   }, [])
 
+  const shouldReduceMotion = useReducedMotion();
+  const childVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 15 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 18
+      }
+    }
+  };
+
   return (
     <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden no-select`}>
       <Toaster />
@@ -157,11 +171,25 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-tertiary/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] min-w-0"
       >
-        <div className="flex flex-col mb-8">
-          <p className={styles.sectionSubText}>Get in touch</p>
-          <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <motion.div 
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.08,
+                delayChildren: 0.1
+              }
+            }
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.12 }}
+          className="flex flex-col mb-8"
+        >
+          <motion.p variants={childVariants} className={styles.sectionSubText}>Get in touch</motion.p>
+          <motion.h3 variants={childVariants} className={styles.sectionHeadText}>Contact.</motion.h3>
           
-          <div className="flex flex-col md:flex-row md:flex-wrap gap-4 mt-6">
+          <motion.div variants={childVariants} className="flex flex-col md:flex-row md:flex-wrap gap-4 mt-6">
             <a
               href="mailto:palyammaaru14@gmail.com"
               className="flex items-center gap-3 text-secondary hover:text-white transition-colors duration-300 group"
@@ -193,11 +221,27 @@ const Contact = () => {
               </div>
               <span className="font-medium text-[14px]">24bcs098-eng</span>
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
-          <div className="flex flex-col sm:flex-row xl:flex-col gap-8">
+        <motion.form 
+          ref={formRef} 
+          onSubmit={handleSubmit} 
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.08,
+                delayChildren: 0.15
+              }
+            }
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.12 }}
+          className="mt-12 flex flex-col gap-8"
+        >
+          <motion.div variants={childVariants} className="flex flex-col sm:flex-row xl:flex-col gap-8">
             <div className="flex-1">
               <label className="flex flex-col">
                 <span className="text-white font-medium mb-4 flex items-center gap-2">
@@ -230,8 +274,9 @@ const Contact = () => {
                 />
               </label>
             </div>
-          </div>
-          <label className="flex flex-col">
+          </motion.div>
+          <motion.div variants={childVariants} className="w-full">
+            <label className="flex flex-col">
             <span className="text-white font-medium mb-4 flex items-center gap-2">
               <FontAwesomeIcon icon={faComment} className="text-purple-400" />
               Message
@@ -244,9 +289,10 @@ const Contact = () => {
               placeholder="Hey Maruthi, love the website! I'd like to chat about some opportunities you might like! 🎉"
               className="bg-black-100/50 backdrop-blur-sm py-4 px-6 placeholder:text-secondary text-white rounded-xl outline-none border-2 border-white/20 font-medium transition-all duration-300 focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 focus:bg-black-100/70 hover:border-white/30 resize-none"
             />
-          </label>
+            </label>
+          </motion.div>
 
-          <div className="flex justify-center sm:justify-start my-2 overflow-hidden w-full">
+          <motion.div variants={childVariants} className="flex justify-center sm:justify-start my-2 overflow-hidden w-full">
             <div className="scale-[0.85] xs:scale-[0.9] sm:scale-100 origin-left">
               <ReCAPTCHA
                 ref={recaptchaRef}
@@ -255,9 +301,10 @@ const Contact = () => {
                 theme="dark"
               />
             </div>
-          </div>
+          </motion.div>
 
-          <button
+          <motion.button
+            variants={childVariants}
             type="submit"
             className="relative bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 overflow-hidden group"
             disabled={loading}
@@ -282,8 +329,8 @@ const Contact = () => {
                 />
               </>
             )}
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
       </motion.div>
 
       <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] min-w-0">

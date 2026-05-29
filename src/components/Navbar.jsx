@@ -85,15 +85,15 @@ const Navbar = () => {
           }}
         >
           {/* Logo Icon */}
-          <div className="w-11 h-11 border-[2.5px] border-white rounded-xl flex items-center justify-center group-hover:border-blue-400 transition-colors duration-300">
-            <span className="text-white font-black text-[22px] tracking-tighter group-hover:text-blue-400 transition-colors duration-300">
+          <div className="w-11 h-11 border-[2.5px] border-white rounded-xl flex items-center justify-center group-hover:border-purple-400 transition-colors duration-300">
+            <span className="text-white font-black text-[22px] tracking-tighter group-hover:text-purple-400 transition-colors duration-300">
               PM
             </span>
           </div>
           
           {/* Logo Text */}
           <div className="flex flex-col justify-center">
-            <span className="text-white font-extrabold text-[22px] tracking-[0.15em] leading-none mb-[4px] group-hover:text-blue-100 transition-colors duration-300">
+            <span className="text-white font-extrabold text-[22px] tracking-[0.15em] leading-none mb-[4px] group-hover:text-purple-100 transition-colors duration-300">
               MARUTHI
             </span>
             <span className="text-gray-400 text-[9px] font-bold tracking-[0.15em] leading-none uppercase">

@@ -167,7 +167,7 @@ const Extracurricular = () => {
         .certification-card {
           background-color: rgba(30, 30, 60, 0.8);
           backdrop-filter: blur(10px);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.25);
           border: 1px solid rgba(255, 255, 255, 0.18);
           transition: all 0.3s ease-in-out;
         }
@@ -194,7 +194,7 @@ const Extracurricular = () => {
           }
           .certification-card {
             background-color: rgba(30, 30, 60, 0.8);
-            box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.37);
+            box-shadow: 0 4px 16px 0 rgba(139, 92, 246, 0.25);
           }
           .swiper-slide-next,
           .swiper-slide-prev {

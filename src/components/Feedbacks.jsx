@@ -9,20 +9,20 @@ import { achievements } from "../constants";
 
 const colorMap = {
   emerald: {
-    bg: "bg-emerald-500/10",
-    border: "border-emerald-500/20 group-hover:border-emerald-500/40",
-    text: "text-emerald-400",
-    glow: "shadow-[0_0_20px_rgba(16,185,129,0.1)]",
-    gradient: "from-emerald-500/10 to-transparent",
-    accent: "bg-emerald-500",
+    bg: "bg-violet-500/10",
+    border: "border-violet-500/20 group-hover:border-violet-500/40",
+    text: "text-violet-400",
+    glow: "shadow-[0_0_20px_rgba(139,92,246,0.1)]",
+    gradient: "from-violet-500/10 to-transparent",
+    accent: "bg-violet-500",
   },
   blue: {
-    bg: "bg-blue-500/10",
-    border: "border-blue-500/20 group-hover:border-blue-500/40",
-    text: "text-blue-400",
-    glow: "shadow-[0_0_20px_rgba(59,130,246,0.1)]",
-    gradient: "from-blue-500/10 to-transparent",
-    accent: "bg-blue-500",
+    bg: "bg-indigo-500/10",
+    border: "border-indigo-500/20 group-hover:border-indigo-500/40",
+    text: "text-indigo-400",
+    glow: "shadow-[0_0_20px_rgba(99,102,241,0.1)]",
+    gradient: "from-indigo-500/10 to-transparent",
+    accent: "bg-indigo-500",
   },
   purple: {
     bg: "bg-purple-500/10",
@@ -33,12 +33,12 @@ const colorMap = {
     accent: "bg-purple-500",
   },
   amber: {
-    bg: "bg-amber-500/10",
-    border: "border-amber-500/20 group-hover:border-amber-500/40",
-    text: "text-amber-400",
-    glow: "shadow-[0_0_20px_rgba(245,158,11,0.1)]",
-    gradient: "from-amber-500/10 to-transparent",
-    accent: "bg-amber-500",
+    bg: "bg-fuchsia-500/10",
+    border: "border-fuchsia-500/20 group-hover:border-fuchsia-500/40",
+    text: "text-fuchsia-400",
+    glow: "shadow-[0_0_20px_rgba(217,70,239,0.1)]",
+    gradient: "from-fuchsia-500/10 to-transparent",
+    accent: "bg-fuchsia-500",
   },
 };
 
@@ -162,11 +162,11 @@ const Feedbacks = () => {
   return (
     <div className="mt-12 bg-gradient-to-b from-[#090b11] to-[#04060b] rounded-[24px] border border-white/[0.02] p-8 md:p-12 overflow-hidden shadow-2xl relative">
       {/* Decorative background grid/dots */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/10 via-transparent to-transparent opacity-60 pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center">
         <motion.div variants={textVariant()} className="text-center w-full">
-          <p className={`${styles.sectionSubText} text-center text-blue-400 font-mono tracking-widest`}>
+          <p className={`${styles.sectionSubText} text-center text-purple-400 font-mono tracking-widest`}>
             My milestones & successes
           </p>
           <h2 className={`${styles.sectionHeadText} text-center mb-6`}>
@@ -192,7 +192,7 @@ const Feedbacks = () => {
               {activeFilter === cat && (
                 <motion.div
                   layoutId="activeAchievementTab"
-                  className="absolute inset-0 bg-blue-600 rounded-xl -z-10 shadow-[0_0_15px_rgba(37,99,235,0.4)]"
+                  className="absolute inset-0 bg-purple-600 rounded-xl -z-10 shadow-[0_0_15px_rgba(147,51,234,0.4)]"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}

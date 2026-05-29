@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Tilt } from "react-tilt";
 
@@ -42,11 +42,11 @@ const ProjectCard = ({ index, name, image, source_code_link, onOpenModal }) => {
         onClick={() => onOpenModal(previewReady)}
       >
         {/* Subtle Top Accent Line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-white/8 group-hover:bg-blue-500/40 transition-all duration-500"></div>
+        <div className="absolute top-0 left-0 right-0 h-px bg-white/8 group-hover:bg-purple-500/40 transition-all duration-500"></div>
 
         {/* Project Number Badge - Premium Minimal */}
         <div className="absolute top-5 left-5 z-20 transition-all duration-400 group-hover:scale-110">
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-white/[0.05] backdrop-blur-lg border border-white/[0.12] group-hover:border-blue-500/50 group-hover:bg-white/[0.08] transition-all duration-400">
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-white/[0.05] backdrop-blur-lg border border-white/[0.12] group-hover:border-purple-500/50 group-hover:bg-white/[0.08] transition-all duration-400">
             <span className="text-white/80 font-semibold text-sm tracking-wider">
               {String(index + 1).padStart(2, "0")}
             </span>
@@ -63,7 +63,7 @@ const ProjectCard = ({ index, name, image, source_code_link, onOpenModal }) => {
               e.stopPropagation();
               window.open(source_code_link, "_blank");
             }}
-            className="relative w-10 h-10 rounded-lg bg-white/[0.05] backdrop-blur-lg border border-white/[0.12] hover:border-blue-500/40 hover:bg-white/[0.08] flex items-center justify-center transition-all duration-400"
+            className="relative w-10 h-10 rounded-lg bg-white/[0.05] backdrop-blur-lg border border-white/[0.12] hover:border-purple-500/40 hover:bg-white/[0.08] flex items-center justify-center transition-all duration-400"
             aria-label="View source code"
           >
             <img
@@ -102,7 +102,7 @@ const ProjectCard = ({ index, name, image, source_code_link, onOpenModal }) => {
             transition={{ duration: 0.4 }}
             className="mb-2 opacity-0 group-hover:opacity-100 transition-all duration-400"
           >
-            <div className="inline-flex items-center gap-1.5 text-xs text-blue-400/85 font-medium tracking-wide">
+            <div className="inline-flex items-center gap-1.5 text-xs text-purple-400/85 font-medium tracking-wide">
               <svg
                 className="w-3.5 h-3.5"
                 fill="none"
@@ -121,20 +121,20 @@ const ProjectCard = ({ index, name, image, source_code_link, onOpenModal }) => {
           </motion.div>
 
           {/* Project Title - Larger for prominence */}
-          <h3 className="text-white font-bold text-lg leading-snug mb-2 tracking-tight group-hover:text-blue-50 transition-colors duration-400 line-clamp-2">
+          <h3 className="text-white font-bold text-lg leading-snug mb-2 tracking-tight group-hover:text-purple-50 transition-colors duration-400 line-clamp-2">
             {name}
           </h3>
 
           {/* Premium Underline Accent */}
-          <div className="h-[1.5px] w-0 group-hover:w-12 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-600 ease-out"></div>
+          <div className="h-[1.5px] w-0 group-hover:w-12 bg-gradient-to-r from-purple-500 to-purple-400 rounded-full transition-all duration-600 ease-out"></div>
         </div>
 
         {/* Bottom Edge Accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/5 group-hover:bg-blue-500/25 transition-all duration-500"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/5 group-hover:bg-purple-500/25 transition-all duration-500"></div>
 
         {/* Premium Hover Glow - Subtle */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/8 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-72 h-72 bg-purple-500/8 rounded-full blur-3xl"></div>
         </div>
       </motion.div>
     </motion.div>
@@ -194,7 +194,7 @@ const Works = () => {
                     >
                       <img
                         src={word.imgPath}
-                        alt="icon"
+                        alt="person"
                         className=" md:p-2 p-1 rounded-full bg-[#8ec5ff]"
                       />
                       <span

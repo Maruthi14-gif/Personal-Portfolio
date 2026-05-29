@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 import { styles } from "../styles";
 
 import {
@@ -88,16 +88,16 @@ const SkillCard = ({ title, subtitle, skills, index }) => (
   >
     <motion.div
       variants={fadeIn("right", "spring", index * 0.15, 0.75)}
-      className="w-full flex flex-col bg-gradient-to-b from-[#0a0c14] to-[#0f121b] border border-white/[0.04] rounded-2xl p-6 hover:border-blue-500/40 transition-all duration-500 shadow-2xl relative overflow-hidden group"
+      className="w-full flex flex-col bg-gradient-to-b from-[#0a0c14] to-[#0f121b] border border-white/[0.04] rounded-2xl p-6 hover:border-purple-500/40 transition-all duration-500 shadow-2xl relative overflow-hidden group"
     >
       {/* Background glow effect on hover */}
-      <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+      <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
       <div className="relative z-10 flex-1 flex flex-col">
-        <h3 className="text-white font-bold text-[20px] tracking-wide mb-1 group-hover:text-blue-200 transition-colors duration-300">
+        <h3 className="text-white font-bold text-[20px] tracking-wide mb-1 group-hover:text-purple-200 transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-[#8ec5ff]/70 text-[11px] mb-6 font-mono tracking-tight uppercase">
+        <p className="text-purple-300/70 text-[11px] mb-6 font-mono tracking-tight uppercase">
           {subtitle}
         </p>
 
@@ -105,7 +105,7 @@ const SkillCard = ({ title, subtitle, skills, index }) => (
           {skills.map((skill, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center justify-center py-4 px-2 rounded-xl bg-white/[0.015] border border-white/[0.03] hover:bg-white/[0.06] hover:-translate-y-1 hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.15)] transition-all duration-300 cursor-pointer"
+              className="flex flex-col items-center justify-center py-4 px-2 rounded-xl bg-white/[0.015] border border-white/[0.03] hover:bg-white/[0.06] hover:-translate-y-1 hover:border-purple-400/50 hover:shadow-[0_4px_20px_rgba(139,92,246,0.15)] transition-all duration-300 cursor-pointer"
             >
               <img
                 src={skill.icon}
@@ -131,11 +131,17 @@ const Tech = () => {
         <h2 className={`${styles.sectionHeadText}`}>Skills.</h2>
       </motion.div>
 
-      <div className="mt-14 flex flex-wrap gap-5 justify-center items-stretch">
+      <motion.div 
+        variants={staggerContainer(0.12, 0.05)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+        className="mt-14 flex flex-wrap gap-5 justify-center items-stretch"
+      >
         {skillCategories.map((category, index) => (
           <SkillCard key={index} index={index} {...category} />
         ))}
-      </div>
+      </motion.div>
 
       <motion.div
         variants={fadeIn("up", "spring", 0.5, 0.75)}
@@ -143,7 +149,7 @@ const Tech = () => {
       >
         <p className="text-secondary/60 italic text-[14px] md:text-[16px] tracking-wide font-light text-center max-w-2xl px-4">
           "First, solve the problem. Then, write the code." <br className="sm:hidden" /> 
-          <span className="not-italic font-medium text-[#8ec5ff]/80 block sm:inline sm:ml-2 mt-2 sm:mt-0">— John Johnson</span>
+          <span className="not-italic font-medium text-purple-300/80 block sm:inline sm:ml-2 mt-2 sm:mt-0">— John Johnson</span>
         </p>
       </motion.div>
     </>

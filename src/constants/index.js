@@ -68,9 +68,14 @@ const education = [
   {
     title: "B.Tech in Computer Science & Engineering",
     company_name: "IIIT Dharwad",
-    icon: web, // placeholder icon
+    icon: web,
     iconBg: "#fff",
     date: "2024 - 2028",
+    location: "Dharwad, Karnataka",
+    cgpa: "8.12 CGPA",
+    coursework: ["Data Structures & Algorithms", "Computer Networks", "Database Management Systems", "Software Engineering"],
+    achievements: ["Active core technical team member", "Exploring scalable cloud systems"],
+    status: "ongoing",
     points: [
       "Currently pursuing with a CGPA of approximately 8.12.",
       "Actively exploring full stack development, modern frontend engineering, cybersecurity, and scalable technologies.",
@@ -82,6 +87,11 @@ const education = [
     icon: mobile,
     iconBg: "#fff",
     date: "2022 - 2024",
+    location: "Vijayawada, AP",
+    cgpa: "95.7%",
+    coursework: ["Mathematics", "Physics", "Chemistry"],
+    achievements: ["Scored 957/1000 on state intermediate board exams"],
+    status: "completed",
     points: [
       "Completed Intermediate education with a score of 957/1000.",
       "Strengthened analytical thinking, competitive mindset, and academic focus toward technology and engineering.",
@@ -93,6 +103,11 @@ const education = [
     icon: backend,
     iconBg: "#fff",
     date: "2021 - 2022",
+    location: "Nandyal, AP",
+    cgpa: "95.3%",
+    coursework: ["General Sciences", "Mathematics", "Social Studies"],
+    achievements: ["Scored 572/600 in SSC board exams"],
+    status: "completed",
     points: [
       "Completed 10th grade with a score of 572/600.",
       "Built discipline, consistency, and strong academic foundations.",
@@ -140,6 +155,15 @@ const experiences = [
     icon: backend,
     iconBg: "#fff",
     date: "Current",
+    location: "Hybrid",
+    highlights: [
+      "Contributing to commercial web application development workflows.",
+      "Writing modern, modular React components following style guides.",
+      "Collaborating closely with senior frontend engineers to refine UX."
+    ],
+    technologies: ["React", "JavaScript", "CSS3", "Tailwind CSS"],
+    impact: "Contributing to features used by team members daily",
+    status: "current",
     points: [
       "Currently interning at Cyart company.",
       "Working on modern web development and software engineering tasks.",
@@ -152,6 +176,15 @@ const experiences = [
     icon: web,
     iconBg: "#fff",
     date: "Current",
+    location: "Remote",
+    highlights: [
+      "Leveraging python libraries (Pandas, NumPy) to analyze raw experimental data.",
+      "Utilizing generative AI tools to assist in parsing data summaries and generating reports.",
+      "Formulating insights to help streamline business decision workflows."
+    ],
+    technologies: ["Python", "Pandas", "NumPy", "OpenAI API"],
+    impact: "Uncovered key database insights to optimize pipeline efficiency",
+    status: "ongoing",
     points: [
       "Actively working as a Data Analyst Intern.",
       "Leveraging AI and data tools to solve analytical problems.",
@@ -163,9 +196,40 @@ const experiences = [
     icon: fullstack,
     iconBg: "#fff",
     date: "2025 - Present",
+    location: "Self-paced",
+    highlights: [
+      "Building full stack applications integrating React, Node.js, and MongoDB.",
+      "Implementing elegant animations and responsive grids with Framer Motion and Tailwind CSS.",
+      "Studying clean coding standards, REST APIs, and Git version control."
+    ],
+    technologies: ["React JS", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Git"],
+    impact: "Built 5+ responsive applications with rich UI and animations",
+    status: "ongoing",
     points: [
       "Building modern web applications using React, Tailwind CSS, Node.js, and JavaScript.",
       "Strong focus on responsive UI design, clean architecture, and practical product development.",
+    ],
+  },
+  {
+    title: "Vice Captain & Sports Lead",
+    company_name: "IIIT Dharwad Cricket & Badminton Team",
+    icon: "sports",
+    iconBg: "#fff",
+    date: "2024 - 2025",
+    location: "Dharwad, Karnataka",
+    highlights: [
+      "Appointed Vice Captain of the IIIT Dharwad Cricket Team, leading and organizing team setups.",
+      "Won Silver medal in Cricket at the IIIT Dharwad intra-sports competition.",
+      "Won Bronze medal in Badminton at the IIIT Dharwad intra-sports competition.",
+      "Represented the institution in Karate, Cricket, and Volleyball tournaments."
+    ],
+    technologies: ["Leadership", "Teamwork", "Sportsmanship", "Strategy"],
+    impact: "Co-led the cricket team to a Silver medal and won multiple awards in intra-college sports",
+    status: "completed",
+    points: [
+      "Served as Vice Captain of the Cricket Team.",
+      "Achieved Silver in Cricket and Bronze in Badminton.",
+      "Represented IIIT Dharwad in multiple tournaments."
     ],
   },
 ];

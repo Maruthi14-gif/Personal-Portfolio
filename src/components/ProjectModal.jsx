@@ -278,7 +278,7 @@ const ProjectModal = ({
                           }}
                           className={`relative w-14 h-10 sm:w-20 sm:h-14 flex-shrink-0 rounded-xl overflow-hidden transition-all duration-300 ${
                             idx === safeImageIndex
-                              ? "ring-2 ring-blue-500 scale-105 opacity-100 z-10 shadow-lg"
+                              ? "ring-2 ring-purple-500 scale-105 opacity-100 z-10 shadow-lg"
                               : "opacity-40 hover:opacity-100 hover:scale-105"
                           }`}
                         >
@@ -294,7 +294,7 @@ const ProjectModal = ({
 
                   {/* Image Counter */}
                   <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full text-white text-xs sm:text-sm font-semibold border border-white/10 shadow-lg z-10 flex items-center gap-2">
-                    <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
                     {safeImageIndex + 1} / {images.length}
@@ -432,7 +432,7 @@ const ProjectModal = ({
                         transition={{ delay: 0.35 + index * 0.05 }}
                         className="flex items-start gap-2 text-gray-300"
                       >
-                        <span className="text-blue-400 mt-1 font-bold">✓</span>
+                        <span className="text-purple-400 mt-1 font-bold">✓</span>
                         <span>{feature}</span>
                       </motion.li>
                     ))}
@@ -489,7 +489,7 @@ const ProjectModal = ({
                     onClick={() =>
                       window.open(project.live_demo_link, "_blank")
                     }
-                    className="flex-1 flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
+                    className="flex-1 flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <svg
                       className="w-5 h-5"

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { styles } from "../styles";
 import { HackerTerminalCanvas } from "./canvas";
 import { useState, useEffect } from "react";
@@ -69,6 +69,13 @@ const WavingHand = () => {
 };
 
 const Hero = () => {
+  const { scrollY } = useScroll();
+  const shouldReduceMotion = useReducedMotion();
+
+  // Create subtle parallax scroll depth and fading
+  const yText = useTransform(scrollY, [0, 500], [0, shouldReduceMotion ? 0 : 150]);
+  const opacityText = useTransform(scrollY, [0, 400], [1, 0]);
+
   const typedItems = [
     "Full Stack Developer",
     "DSA Enthusiast",
@@ -76,8 +83,33 @@ const Hero = () => {
     "Data Analyst"
   ];
 
+  // Cinematic staggered load animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.18,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 90,
+        damping: 18,
+      },
+    },
+  };
+
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <section className="relative w-full h-screen mx-auto overflow-hidden">
       <style jsx>{`
         @keyframes wave {
           0% { transform: rotate(0deg); }
@@ -92,26 +124,31 @@ const Hero = () => {
           animation: wave 1.8s infinite;
         }
       `}</style>
-      <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+      <motion.div
+        style={{ y: yText, opacity: opacityText }}
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
           <div className='w-1 sm:h-80 h-40 violet-gradient' />
         </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1 variants={itemVariants} className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Maruthi</span> <span className="text-[40px] sm:text-[50px] inline-block animate-waving-hand origin-[70%_70%]">👋</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          </motion.h1>
+          <motion.p variants={itemVariants} className={`${styles.heroSubText} mt-2 text-white-100`}>
             I'm a <TypewriterText texts={typedItems} />
-          </p>
-          <p className="mt-4 text-secondary text-[16px] max-w-3xl leading-[30px]">
+          </motion.p>
+          <motion.p variants={itemVariants} className="mt-4 text-secondary text-[16px] max-w-3xl leading-[30px]">
             Driven by curiosity, creativity, and continuous learning, I enjoy building meaningful digital experiences and turning challenges into opportunities for growth.
-          </p>
-        </div>
-      </div>
+          </motion.p>
+        </motion.div>
+      </motion.div>
 
       {/* 3D Canvas removed per user request */}
 
