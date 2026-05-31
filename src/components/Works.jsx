@@ -121,7 +121,7 @@ const ProjectCard = ({ index, name, image, source_code_link, onOpenModal }) => {
           </motion.div>
 
           {/* Project Title - Larger for prominence */}
-          <h3 className="text-white font-bold text-lg leading-snug mb-2 tracking-tight group-hover:text-purple-50 transition-colors duration-400 line-clamp-2">
+          <h3 className="text-white font-bold text-lg leading-snug mb-2 tracking-tight group-hover:text-purple-55 transition-colors duration-400 line-clamp-2">
             {name}
           </h3>
 
@@ -215,7 +215,7 @@ const Works = () => {
           </motion.span>
         </div>
 
-        <div className="mt-20 flex flex-wrap gap-10">
+        <div className="mt-16 flex flex-wrap gap-10">
           {projects.map((project, index) => (
             <ProjectCard
               key={`project-${index}`}

@@ -32,7 +32,7 @@ const TypewriterText = ({ texts }) => {
   }, [currentIndex, isTyping, texts, displayText]);
 
   return (
-    <span className="inline-block text-[#915EFF] font-bold">
+    <span className="inline-block text-[#915EFF] font-bold" style={{ textShadow: "0 0 15px rgba(145, 94, 255, 0.5)" }}>
       {displayText.split('').map((char, index) => (
         <motion.span
           key={index}

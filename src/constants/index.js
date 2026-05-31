@@ -211,24 +211,23 @@ const experiences = [
     ],
   },
   {
-    title: "Vice Captain & Sports Lead",
-    company_name: "IIIT Dharwad Cricket & Badminton Team",
+    title: "Cricket Team Member & Sports Lead",
+    company_name: "IIIT Dharwad Cricket Team",
     icon: "sports",
     iconBg: "#fff",
     date: "2024 - 2025",
     location: "Dharwad, Karnataka",
     highlights: [
-      "Appointed Vice Captain of the IIIT Dharwad Cricket Team, leading and organizing team setups.",
+      "Active member of the IIIT Dharwad Cricket Team, contributing to and organizing team setups.",
       "Won Silver medal in Cricket at the IIIT Dharwad intra-sports competition.",
-      "Won Bronze medal in Badminton at the IIIT Dharwad intra-sports competition.",
       "Represented the institution in Karate, Cricket, and Volleyball tournaments."
     ],
     technologies: ["Leadership", "Teamwork", "Sportsmanship", "Strategy"],
-    impact: "Co-led the cricket team to a Silver medal and won multiple awards in intra-college sports",
+    impact: "Contributed to winning a Silver medal and multiple awards in intra-college sports",
     status: "completed",
     points: [
-      "Served as Vice Captain of the Cricket Team.",
-      "Achieved Silver in Cricket and Bronze in Badminton.",
+      "Served as a member of the Cricket Team.",
+      "Achieved Silver in Cricket at the IIIT Dharwad intra-sports competition.",
       "Represented IIIT Dharwad in multiple tournaments."
     ],
   },
@@ -279,15 +278,14 @@ const projects = [
 
 const achievements = [
   {
-    title: "Cricket & Badminton Awards",
+    title: "Cricket Awards",
     category: "sports",
-    description: "Appointed Vice Captain of the IIIT Dharwad Cricket Team. Earned multiple medals at internal sports tournaments.",
+    description: "Member of the IIIT Dharwad Cricket Team. Earned multiple medals at internal sports tournaments.",
     date: "2024 - 2025",
     icon: "sports",
     points: [
-      "Vice Captain of the IIIT Dharwad Cricket Team, leading and organizing team setups.",
+      "Member of the IIIT Dharwad Cricket Team, contributing to team setups and organization.",
       "Won Silver medal in Cricket at the IIIT Dharwad intra-sports competition.",
-      "Won Bronze medal in Badminton at the IIIT Dharwad intra-sports competition.",
       "Represented school in Karate, Cricket, and Volleyball tournaments."
     ],
     color: "emerald"

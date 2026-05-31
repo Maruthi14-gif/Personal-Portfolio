@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter } from 'react-router-dom'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import Lenis from 'lenis'
-import { About, Contact, Education, Experience, Extracurricular, Hero, Navbar, Tech, Works, StarsCanvas } from './components' // if you want to use skills balls make sure to import tech and do the same for src\components\index.js
+import { About, Contact, Education, Experience, Extracurricular, Hero, Navbar, Tech, Works, StarsCanvas, CustomCursor } from './components' // if you want to use skills balls make sure to import tech and do the same for src\components\index.js
 
 function App() {
   const { scrollYProgress } = useScroll()
@@ -55,6 +55,8 @@ function App() {
 
   return (
       <BrowserRouter>
+        <CustomCursor />
+        <div className="grain-overlay" />
         <div className='relative z-0 bg-primary'>
           <motion.div 
             className="fixed top-0 left-0 right-0 h-[3.5px] bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 origin-left z-50 shadow-[0_0_8px_rgba(139,92,246,0.3)] pointer-events-none"

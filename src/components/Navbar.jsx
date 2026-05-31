@@ -71,8 +71,8 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 transition-all duration-300 ${
-        scrolled ? "bg-primary shadow-lg" : "bg-transparent"
+      } w-full flex items-center py-4 fixed top-0 z-20 transition-all duration-300 ${
+        scrolled ? "bg-primary/70 backdrop-blur-md border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : "bg-transparent"
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -113,11 +113,18 @@ const Navbar = () => {
               <a
                 href={`#${nav.id}`}
                 className={`${
-                  active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-300`}
+                  active === nav.title ? "text-white font-semibold" : "text-secondary"
+                } hover:text-white text-[17px] font-medium cursor-pointer transition-all duration-300 relative py-1`}
                 onClick={() => setActive(nav.title)}
               >
                 {nav.title}
+                {active === nav.title && (
+                  <motion.div
+                    layoutId="activeNavUnderline"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </a>
             </motion.li>
           ))}

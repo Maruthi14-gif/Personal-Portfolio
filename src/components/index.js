@@ -14,6 +14,7 @@ import Extracurricular from "./Extracurricular";
 import Works from "./Works";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
+import CustomCursor from "./CustomCursor";
 
 export {
   Hero,
@@ -30,4 +31,5 @@ export {
   BallCanvas,
   ComputersCanvas,
   StarsCanvas,
+  CustomCursor,
 };

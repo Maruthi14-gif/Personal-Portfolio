@@ -114,4 +114,9 @@ const resumeDevPlugin = {
 
 export default defineConfig({
   plugins: [react(), resumeDevPlugin],
+  resolve: {
+    alias: {
+      "@": path.resolve('./src'),
+    },
+  },
 })

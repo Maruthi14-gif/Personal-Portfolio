@@ -6,3 +6,4 @@ import HeroParticlesCanvas from "./HeroParticles";
 import HackerTerminalCanvas from "./HackerTerminal";
 
 export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, HeroParticlesCanvas, HackerTerminalCanvas };
+
